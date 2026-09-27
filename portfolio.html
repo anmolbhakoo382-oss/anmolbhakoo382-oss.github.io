@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DevStudio Portfolio</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#0b1020;
+    color:white;
+}
+
+header{
+    padding:20px;
+    border-bottom:1px solid #27314b;
+}
+
+nav{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#7c83ff;
+}
+
+nav a{
+    color:#b9c0d4;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    text-align:center;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.badge{
+    color:#9da3ff;
+    margin-bottom:20px;
+    font-weight:bold;
+}
+
+h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.gradient{
+    color:#8b91ff;
+}
+
+.hero p{
+    color:#aeb6ca;
+    font-size:18px;
+    max-width:600px;
+    margin:0 auto 30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 22px;
+    background:#6972ff;
+    color:white;
+    text-decoration:none;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+section{
+    padding:80px 0;
+}
+
+.dark{
+    background:#0e1426;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#121a30;
+    border:1px solid #27314b;
+    border-radius:15px;
+    padding:30px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#919bb1;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    border-top:1px solid #27314b;
+    color:#707b94;
+}
+
+@media(max-width:700px){
+
+    h1{
+        font-size:42px;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0 8px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+Dev<span>Studio</span>
+</div>
+
+<div>
+<a href="index.html">Home</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<div class="container">
+
+<div class="badge">
+WEB DEVELOPER
+</div>
+
+<h1>
+Creating <span class="gradient">Modern</span> Websites.
+</h1>
+
+<p>
+I create modern, responsive and professional websites
+for businesses, creators and personal brands.
+</p>
+
+<a href="#projects" class="btn">
+View My Work
+</a>
+
+</div>
+
+</section>
+
+
+<section class="dark" id="skills">
+
+<div class="container">
+
+<div class="title">
+<h2>My Skills</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>💻 Web Development</h3>
+<p>Modern responsive websites built with clean code.</p>
+</div>
+
+<div class="card">
+<h3>🎨 Web Design</h3>
+<p>Clean and professional interfaces for modern brands.</p>
+</div>
+
+<div class="card">
+<h3>⚡ Performance</h3>
+<p>Fast and smooth websites across different devices.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="projects">
+
+<div class="container">
+
+<div class="title">
+<h2>My Projects</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Business Website</h3>
+<p>Professional business website.</p>
+<br>
+<a href="business.html" class="btn">
+View Project
+</a>
+</div>
+
+<div class="card">
+<h3>Landing Page</h3>
+<p>Modern landing page for products and services.</p>
+<br>
+<a href="landing.html" class="btn">
+View Project
+</a>
+</div>
+
+<div class="card">
+<h3>DevStudio</h3>
+<p>My main developer website.</p>
+<br>
+<a href="index.html" class="btn">
+View Project
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="dark" id="contact">
+
+<div class="container">
+
+<div class="title">
+<h2>Let's Work Together</h2>
+
+<br>
+
+<a
+href="https://api.whatsapp.com/send?phone=917973793715"
+target="_blank"
+class="btn">
+
+Contact Me on WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 DevStudio. All rights reserved.
+
+</footer>
+
+</body>
+</html>

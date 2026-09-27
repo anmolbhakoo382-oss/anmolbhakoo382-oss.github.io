@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DevStudio | Web Developer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0b1020;
+    color:#ffffff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(11,16,32,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+nav{
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#7c83ff;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#b9c0d4;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#8d94ff;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:calc(100vh - 72px);
+    display:flex;
+    align-items:center;
+    background:
+        radial-gradient(circle at 80% 20%,rgba(99,102,241,.22),transparent 30%),
+        radial-gradient(circle at 10% 80%,rgba(34,211,238,.12),transparent 30%),
+        #0b1020;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center;
+    padding:90px 0;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    background:rgba(124,131,255,.13);
+    border:1px solid rgba(124,131,255,.3);
+    color:#9da3ff;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(45px,6vw,72px);
+    line-height:1.05;
+    letter-spacing:-3px;
+    margin-bottom:22px;
+}
+
+.gradient{
+    color:#8b91ff;
+}
+
+.hero p{
+    color:#aeb6ca;
+    font-size:18px;
+    max-width:600px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 22px;
+    border-radius:9px;
+    font-weight:700;
+    border:none;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#6972ff;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#7c83ff;
+    transform:translateY(-2px);
+}
+
+.btn-secondary{
+    background:transparent;
+    color:white;
+    border:1px solid #343c55;
+}
+
+.btn-secondary:hover{
+    border-color:#6972ff;
+    color:#9da3ff;
+}
+
+/* HERO CARD */
+
+.hero-card{
+    background:linear-gradient(145deg,#151c35,#0f1529);
+    border:1px solid #29324d;
+    border-radius:22px;
+    padding:30px;
+    box-shadow:0 25px 70px rgba(0,0,0,.35);
+}
+
+.code-window{
+    background:#080c18;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid #222b42;
+}
+
+.code-top{
+    padding:12px 15px;
+    border-bottom:1px solid #222b42;
+    color:#68738d;
+}
+
+.dot{
+    display:inline-block;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    margin-right:5px;
+    background:#505a73;
+}
+
+.code{
+    padding:25px;
+    font-family:Consolas,monospace;
+    color:#b9c4dd;
+    font-size:14px;
+}
+
+.code .purple{
+    color:#a78bfa;
+}
+
+.code .blue{
+    color:#60a5fa;
+}
+
+.code .green{
+    color:#6ee7b7;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title h2{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.section-title p{
+    color:#8e98ae;
+}
+
+/* SERVICES */
+
+.services{
+    background:#0e1426;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.service-card{
+    background:#121a30;
+    border:1px solid #27314b;
+    border-radius:16px;
+    padding:30px;
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-6px);
+    border-color:#6972ff;
+}
+
+.icon{
+    font-size:35px;
+    margin-bottom:18px;
+}
+
+.service-card h3{
+    margin-bottom:10px;
+}
+
+.service-card p{
+    color:#919bb1;
+}
+
+/* ABOUT */
+
+.about{
+    background:#0b1020;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.about p{
+    color:#9ca6bc;
+    margin-bottom:20px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.stat{
+    background:#121a30;
+    border:1px solid #27314b;
+    padding:25px;
+    border-radius:15px;
+}
+
+.stat strong{
+    display:block;
+    font-size:30px;
+    color:#8b91ff;
+}
+
+/* PROJECTS */
+
+.projects{
+    background:#0e1426;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.project{
+    background:#121a30;
+    border:1px solid #27314b;
+    border-radius:16px;
+    padding:28px;
+}
+
+.project h3{
+    margin-bottom:10px;
+}
+
+.project p{
+    color:#919bb1;
+    margin-bottom:20px;
+}
+
+.project a{
+    color:#8b91ff;
+    font-weight:bold;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#0b1020;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    background:#121a30;
+    border:1px solid #27314b;
+    border-radius:18px;
+    padding:35px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:7px;
+    color:#cbd2e2;
+    font-weight:600;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:14px;
+    border-radius:9px;
+    border:1px solid #303a55;
+    background:#0b1020;
+    color:white;
+    outline:none;
+    font-family:inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:#6972ff;
+}
+
+.form-group textarea{
+    height:140px;
+    resize:vertical;
+}
+
+.send-btn{
+    width:100%;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #202940;
+    padding:25px 0;
+    text-align:center;
+    color:#707b94;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:72px;
+        left:0;
+        width:100%;
+        background:#0b1020;
+        flex-direction:column;
+        padding:20px;
+        gap:20px;
+        border-bottom:1px solid #27314b;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero-grid,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-grid,
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .stats{
+        margin-top:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+
+<a href="#" class="logo">Dev<span>Studio</span></a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+</nav>
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div>
+
+<div class="badge">AVAILABLE FOR PROJECTS</div>
+
+<h1>
+Building
+<span class="gradient">Modern</span>
+Web Experiences.
+</h1>
+
+<p>
+I create modern, responsive and professional websites
+for businesses, creators and personal brands.
+</p>
+
+<div class="buttons">
+
+<a href="#projects" class="btn btn-primary">
+View Projects
+</a>
+
+
+<a href="https://api.whatsapp.com/send?phone=917973793715"
+   class="btn btn-secondary"
+   target="_blank">
+    Let's Talk
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<div class="code-window">
+
+<div class="code">
+
+    <span class="purple">&lt;website&gt;</span><br><br>
+
+    <span class="blue">design</span> =
+    <span class="green">"modern"</span>;<br>
+
+    <span class="blue">responsive</span> =
+    <span class="green">true</span>;<br>
+
+    <span class="blue">performance</span> =
+    <span class="green">"fast"</span>;<br>
+
+    <span class="blue">technology</span> =
+    <span class="green">"web"</span>;<br><br>
+
+    <span class="purple">&lt;/website&gt;</span>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+<h2>My Services</h2>
+<p>Professional web solutions for modern businesses and creators.</p>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+<div class="icon">💻</div>
+<h3>Web Development</h3>
+<p>Modern, responsive and functional websites built for your needs.</p>
+</div>
+
+<div class="service-card">
+<div class="icon">🎨</div>
+<h3>Web Design</h3>
+<p>Clean and attractive designs that look great on every device.</p>
+</div>
+
+<div class="service-card">
+<div class="icon">⚡</div>
+<h3>Performance</h3>
+<p>Fast-loading websites designed for a smooth user experience.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div>
+<h2>About Me</h2>
+
+<p>
+I'm a web developer focused on creating modern,
+responsive and professional websites.
+</p>
+
+<p>
+I combine clean design with modern technology
+to build websites that are fast and easy to use.
+</p>
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<strong>10+</strong>
+Projects
+</div>
+
+<div class="stat">
+<strong>100%</strong>
+Responsive
+</div>
+
+<div class="stat">
+<strong>24/7</strong>
+Support
+</div>
+
+<div class="stat">
+<strong>Fast</strong>
+Performance
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+<div class="container">
+
+<div class="section-title">
+<h2>My Projects</h2>
+<p>Some of my recent work.</p>
+</div>
+
+<div class="project-grid">
+
+<div class="project">
+<h3>Business Website</h3>
+<p>
+A modern and responsive website designed
+for a business.
+</p>
+<a href="business.html">View Project →</a>
+</div>
+
+<div class="project">
+<h3>Personal Portfolio</h3>
+<p>
+A professional portfolio website for
+showcasing skills and work.
+</p>
+<a href="portfolio.html">View Project →</a>
+</div>
+
+<div class="project">
+<h3>Landing Page</h3>
+<p>
+A clean and modern landing page designed
+to attract visitors.
+</p>
+<a href="landing.html">View Project
+     →</a>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Let's Work Together</h2>
+<p>Have a project in mind? Send me a message.</p>
+</div>
+
+<div class="contact-box">
+
+<form onsubmit="sendMessage(event)">
+
+<div class="form-group">
+<label for="name">Name</label>
+<input type="text" id="name" required>
+</div>
+
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" required>
+</div>
+
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" required></textarea>
+</div>
+
+<button type="submit" class="btn btn-primary send-btn">
+Send Message
+</button>
+
+</form>
+
+</div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+<div class="container">
+<p>© 2026 DevStudio. All rights reserved.</p>
+</div>
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+}
+
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const subject = encodeURIComponent(
+        "New Website Inquiry from " + name
+    );
+
+    const body = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\n\nMessage:\n" + message
+    );
+
+    window.location.href =
+        "mailto:anmolbhakoo382@gmail.com?subject=" +
+        subject +
+        "&body=" +
+        body;
+}
+
+</script>
+
+</body>
+</html>
